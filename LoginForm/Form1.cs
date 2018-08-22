@@ -16,5 +16,36 @@ namespace LoginForm
         {
             InitializeComponent();
         }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+            System.Environment.Exit(0);
+        }
+
+        private void ClrForm()
+        {
+            txtPass.Text = "";
+            txtUser.Text = "";
+        }
+        private void label3_Click(object sender, EventArgs e)
+        {
+            string name = txtUser.Text;
+            string pass = txtPass.Text;
+            if (name.Equals("Hari") && pass.Equals("kishore"))
+            {
+                MessageBox.Show("Login Successful.", "Successful", MessageBoxButtons.OK);
+                ClrForm();
+            }
+            else
+            {
+                MessageBox.Show("Please enter coorect credentials.", "login failed", MessageBoxButtons.RetryCancel);
+                ClrForm();
+            }
+        }
+
+        private void txtPass_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
